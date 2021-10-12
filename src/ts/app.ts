@@ -211,6 +211,14 @@ const addCourse = () => {
             successMessage.className = 'success is-active'; // Activate success message
             successMessage.innerText = 'Kursen har skapats.'; // Define success message
             tableBody.innerHTML = ''; // Empty courses
+            
+            /* Empty all values */
+            startDateInput.value = '';
+            endDateInput.value = '';
+            codeInput.value = '';
+            titleInput.value = '';
+            syllabusInput.value = '';
+
             printCourses(); // Print courses again
         });
 }
