@@ -1,0 +1,27 @@
+/*------------------------------------*\
+    HELPER CLASSES
+\*------------------------------------*/
+
+/*------ Hidden elements ------*/
+
+.hidden-visually:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+/*------ Clearfix for containers of floating elements ------*/
+
+.clear::before,
+.clear::after {
+    content: '';
+    display: table;
+}
+
+.clear::after {
+    clear: both;
+}

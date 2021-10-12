@@ -1,0 +1,31 @@
+/*------------------------------------*\
+    MODULE: COURSE LIST
+\*------------------------------------*/
+
+.courses {
+    font-size: $font-size-14;
+    text-align: left;
+
+    @include breakpoint(tablet) {
+        font-size: $font-size-16;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $font-size-18;
+    }
+
+    th,
+    td {
+        @include border;
+        padding: $spacing-5;
+        vertical-align: top;
+
+        &:nth-child(2) {
+            width: $full-width;
+        }
+
+        @include breakpoint(tablet) {
+            padding: $spacing-10;
+        }
+    }
+}

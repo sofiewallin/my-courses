@@ -1,0 +1,100 @@
+/*------------------------------------*\
+    TYPOGRAPHY
+\*------------------------------------*/
+
+/*------ General ------*/
+
+body,
+input,
+select {
+    font-weight: $font-extralight; 
+    font-size: $font-size-16;
+    line-height: 1.5;
+    font-family: $main-font;
+
+    @include breakpoint(tablet) {
+        font-size: $font-size-18;
+    }
+}
+
+th,
+label,
+a {
+    font-weight: $font-regular;
+}
+
+/*------ Links ------*/
+
+a {
+    color: $blue;
+
+    &:visited {
+        color: $purple;
+    }
+
+    &:hover {
+        background-color: $white;
+        color: darken($blue, 20%);
+        text-decoration: none;
+    }
+}
+
+/*------ Headings ------*/
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+    font-weight: $font-semibold;
+}
+
+/* H1 */
+h1 {
+    font-size: $font-size-32;
+
+    @include breakpoint(tablet) {
+        font-size: $font-size-45;
+        line-height: 1.2;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $font-size-60;
+    }
+}
+
+/* H2 */
+h2 {
+    font-size: $font-size-26;
+
+    @include breakpoint(tablet) {
+        font-size: $font-size-32;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $font-size-45;
+        line-height: 1.2;
+    }
+}
+
+/* H3 */
+h3 {
+    font-size: $font-size-22;
+
+    @include breakpoint(tablet) {
+        font-size: $font-size-26;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $font-size-32;
+    }
+}
+
+/*------ Preamble ------*/
+
+.preamble {
+    font-size: $font-size-18;
+
+    @include breakpoint(tablet) {
+        font-size: $font-size-24;
+    }
+}

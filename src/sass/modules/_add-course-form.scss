@@ -1,0 +1,81 @@
+/*------------------------------------*\
+    MODULE: ADD COURSE FORM
+\*------------------------------------*/
+
+/*------ Labels ------*/
+
+label {
+    @include block;
+    padding-bottom: $spacing-5;
+
+    & .required {
+        font-weight: $font-semibold;
+        text-decoration: none;
+    }
+}
+
+/*------ Form fields ------*/
+
+.form-field {
+    margin-bottom: $spacing-20;
+}
+
+.submit-field {
+    margin-top: $spacing-25;
+}
+
+/*------ Fields ------*/
+
+input,
+select {
+    @include border;
+    background-color: $white;
+    padding: $spacing-5;
+    width: $full-width;
+
+    &:invalid {
+        border-color: $red;
+        background-color: lighten($red, 58%);
+    }
+
+    &:focus:invalid {
+        outline: none;
+    }
+}
+
+/*------ Messages ------*/
+
+.error,
+.success {
+    color: $white;
+    font-weight: $font-regular;
+    padding: 0;
+}
+
+.error {
+    @include block;
+    background-color: $red;
+    width: $full-width;
+
+    a {
+        color: $white;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+.success {
+    @include inline-block;
+    background-color: $green;
+    margin-top: $spacing-20;
+}
+
+.is-active {
+    padding: $spacing-5;
+
+    @include breakpoint(tablet) {
+        padding: $spacing-10;
+    }
+}

@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    OUTER CONTAINERS
+\*------------------------------------*/
+
+.outer-container {
+    padding-top: $spacing-35;
+
+    & > *:first-child {
+        margin-top: 0;
+    }
+
+    @include breakpoint(tablet) {
+        padding-top: $spacing-45;
+    }
+
+    @include breakpoint(desktop) {
+        padding-top: $spacing-75;
+    }
+}
+
+/*------ Main footer ------*/
+
+body > .outer-container:last-child {
+    padding-bottom: $spacing-35;
+
+    @include breakpoint(tablet) {
+        padding-bottom: $spacing-45;
+    }
+
+    @include breakpoint(desktop) {
+        padding-bottom: $spacing-75;
+    }
+}

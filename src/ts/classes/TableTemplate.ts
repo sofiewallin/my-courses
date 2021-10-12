@@ -36,14 +36,6 @@ export class TableTemplate {
         syllabusTableCell.append(syllabusLink); // Add link to table cell
         tableRow.append(syllabusTableCell); // Add table cell to table row
 
-        /* Create delete button table cell */
-        /*const deleteButtonTableCell = document.createElement('td');
-        const deleteButton = document.createElement('button'); // Create button
-        deleteButton.id = `course-id-${id}`;
-        deleteButton.innerText = 'Radera';
-        deleteButtonTableCell.append(deleteButton);
-        tableRow.append(deleteButtonTableCell);*/
-
         /* Add table row to table body */
         this.tableBody.append(tableRow);
     }

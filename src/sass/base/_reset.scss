@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    BASE STYLE & RESETS
+\*------------------------------------*/
+
+html, 
+*, 
+*::after, 
+*::before {   
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+html, 
+body {
+    height: $full-width;
+    width: $full-width;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $light-yellow;
+    color: $dark-grey;
+}
+
+/*------ Images ------*/
+
+figure,
+img {
+    @include block;
+    height: auto;
+    max-width: $full-width;
+}
+
+/*------ Tables ------*/
+
+table {
+    border-collapse: collapse;
+    width: $full-width;
+
+}

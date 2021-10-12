@@ -1,0 +1,34 @@
+/*------------------------------------*\
+    ROWS
+\*------------------------------------*/
+
+.row {
+    @include block;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: calc($width-440 + ($spacing-20*2));
+    padding-right: $spacing-20;
+    padding-left: $spacing-20;
+
+    &--wide {
+        @extend .row;
+        max-width: calc($width-wide + ($spacing-20*2));
+    }
+
+    &--full {
+        @extend .row;
+        padding-right: 0;
+        padding-left: 0;
+        max-width: $full-width;
+    }
+
+    @include breakpoint(tablet) {   
+        max-width: calc($width-540 + ($spacing-20*2));
+
+        &--wide {
+            max-width: calc($width-wide + ($spacing-40*2));
+            padding-right: $spacing-40;
+            padding-left: $spacing-40;
+        }
+    }
+}

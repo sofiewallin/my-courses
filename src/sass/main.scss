@@ -4,7 +4,17 @@
 * CSS by Sofie Wallin (sowa2002), student at MIUN, 2021
 */
 
-@import 'base';
-@import 'typography';
-@import 'layout';
-@import 'component';
+@import './utilities/variables';
+@import './utilities/mixins';
+@import './utilities/helper-classes';
+
+@import './base/reset';
+@import './base/typography';
+
+@import './layout/outer-containers';
+@import './layout/rows';
+@import './layout/content-blocks';
+
+@import './modules/buttons';
+@import './modules/course-list';
+@import './modules/add-course-form';

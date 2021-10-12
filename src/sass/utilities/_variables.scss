@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    VARIABLES
+\*------------------------------------*/
+
+/*------ Layout ------*/
+
+/* Widths */
+$full-width: 100%;
+$width-440: 44.0rem;
+$width-540: 54.0rem;
+$width-wide: 90.0rem;
+
+/* Spacing */
+$spacing-5: 0.5rem;
+$spacing-10: 1.0rem;
+$spacing-20: 2.0rem;
+$spacing-25: 2.5rem;
+$spacing-35: 3.5rem;
+$spacing-40: 4.0rem;
+$spacing-45: 4.5rem;
+$spacing-50: 5.0rem;
+$spacing-60: 6.0rem;
+$spacing-75: 7.5rem;
+$spacing-85: 8.5rem;
+$spacing-90: 9.0rem;
+
+/*------ Colors ------*/
+
+$yellow: #e9b92c;
+$light-yellow: lighten($yellow, 40%);
+$blue: #2a31b7;
+$dark-grey: #282828;
+$white: #fff;
+$purple: #653083;
+$red: #A52323;
+$green: #377328;
+
+/*------ Typography ------*/
+
+/* Font Family */
+$main-font: ('Jost', sans-serif);
+$code-font: monospace;
+
+/* Font weight */
+$font-extralight: 200;
+$font-regular: 400;
+$font-semibold: 600;
+
+/* Font sizes */
+$font-size-14: 1.4rem;
+$font-size-16: 1.6rem;
+$font-size-18: 1.8rem;
+$font-size-22: 2.2rem;
+$font-size-24: 2.4rem;
+$font-size-26: 2.6rem;
+$font-size-32: 3.2rem;
+$font-size-45: 4.5rem;
+$font-size-60: 6.0rem;

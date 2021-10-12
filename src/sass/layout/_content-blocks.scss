@@ -1,0 +1,44 @@
+/*------------------------------------*\
+    CONTENT BLOCKS
+\*------------------------------------*/
+
+/*------ Text blocks ------*/
+
+h1,
+h2,
+p {
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    &:not(:first-child) {
+        margin-top: $spacing-40;
+    }
+}
+
+h3 {
+    margin-top: 1.25em;
+    margin-bottom: 0.7em;
+
+    @include breakpoint(tablet) {
+        margin-top: 1.4em;
+    }
+
+    @include breakpoint(desktop) {
+        margin-top: 1.6em;
+    }
+}
+
+/*------ Boxes ------*/
+
+.box {
+    margin-top: $spacing-25;
+
+    @include breakpoint(tablet) {
+        margin-top: $spacing-45;
+    }
+    
+    @include breakpoint(desktop) {
+        margin-top: $spacing-50;
+    }
+}

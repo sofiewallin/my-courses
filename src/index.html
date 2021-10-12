@@ -10,17 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,400;0,600;1,200;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="main-header">
+    <header id="main-header" class="outer-container">
         <h1 class="heading row">Kurslistan</h1>
         <p class="preamble row">En webbapplikation byggd med HTML, TypeScript och Sass som visar och hanterar kurserna i min utbildning med hjälp av en <a href="https://studenter.miun.se/~sowa2002/dt173g/kursmoment5-rest/">REST webbtjänst</a> som jag också utvecklat.</p> 
     </header>
     <main id="main-content">
-        <section id="kurslista">
-            <h3 class="heading row">Mina kurser</h3>
+        <section id="kurslista" class="outer-container">
+            <h2 class="heading row">Mina kurser</h2>
             <div id="result">
 
             </div>
-            <table id="courses" class="row--wide">
+            <table id="courses" class="courses row--wide box">
                 <thead>
                     <tr>
                         <th>Kurskod</th>
@@ -34,30 +34,30 @@
                 </tbody>
             </table>
         </section>
-        <section id="lagg-till-kurs">
-            <h3 class="heading row">Lägg till kurs</h3>
-            <form action="./" id="add-course" class="row" novalidate>
-                <p>
+        <section id="lagg-till-kurs" class="outer-container">
+            <h2 class="heading row">Lägg till kurs</h2>
+            <form action="./" id="add-course" class="add-course row" novalidate>
+                <p class="form-field">
                     <label for="start-date">Startdatum <abbr title="obligatorisk" class="required">*</abbr></label>
-                    <input type="date" name="start-date" id="start-date" min="2020-08-31" max="2022-03-21" required value="2021-11-01">
+                    <input type="date" name="start-date" id="start-date" min="2020-08-31" max="2022-03-21" required>
                     <span class="error" aria-live="polite"></span>
                 </p>
-                <p>
+                <p class="form-field">
                     <label for="end-date">Slutdatum <abbr title="obligatorisk" class="required">*</abbr></label>
-                    <input type="date" name="end-date" id="end-date" min="2020-11-01" max="2022-06-05" required value="2021-01-16">
+                    <input type="date" name="end-date" id="end-date" min="2020-11-01" max="2022-06-05" required>
                     <span class="error" aria-live="polite"></span>
                 </p>
-                <p>
+                <p class="form-field">
                     <label for="code">Kurskod <abbr title="obligatorisk" class="required">*</abbr></label>
-                    <input type="text" name="code" id="code" minlength="6" maxlength="7" placeholder="ex. DT057G" required value="DT162G">
+                    <input type="text" name="code" id="code" minlength="6" maxlength="7" placeholder="ex. DT057G" required>
                     <span class="error" aria-live="polite"></span>
                 </p>
-                <p>
+                <p class="form-field">
                     <label for="title">Kursnamn <abbr title="obligatorisk" class="required">*</abbr></label>
-                    <input type="text" name="title" id="title" minlength="2" maxlength="255" placeholder="ex. Webbutveckling I"required value="Javascriptbaserad webbutveckling">
+                    <input type="text" name="title" id="title" minlength="2" maxlength="255" placeholder="ex. Webbutveckling I"required>
                     <span class="error" aria-live="polite"></span>
                 </p>
-                <p>
+                <p class="form-field">
                     <label for="progression">Progression <abbr title="obligatorisk" class="required">*</abbr></label>
                     <select name="progression" id="progression" required>
                         <option value="A">A</option>
@@ -65,22 +65,20 @@
                         <option value="C">C</option>
                     </select>
                 </p>
-                <p>
+                <p class="form-field">
                     <label for="syllabus">Länk till kursplan <abbr title="obligatorisk" class="required">*</abbr></label>
-                    <input type="url" name="syllabus" id="syllabus" maxlength="255" placeholder="https://www.miun.se/..." required value="https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=24366">
+                    <input type="url" name="syllabus" id="syllabus" maxlength="255" placeholder="https://www.miun.se/..." required>
                     <span class="error" aria-live="polite"></span>
                 </p>
-                <p>
-                    <input type="submit" value="Lägg till kurs" id="submit">
+                <p class="submit-field">
+                    <input type="submit" value="Lägg till kurs" id="submit" class="button">
                 </p>
                 <p class="success" aria-live="polite"></p>
             </form>
         </section>
     </main>
-    <footer id="main-footer">
-        <footer id="main-footer">
-            <p class="row">&copy; 2021 – Design och kod av Sofie Wallin. <a href="#">Tillbaka till toppen</a></p>
-        </footer>
+    <footer id="main-footer" class="outer-container">
+        <p class="row">&copy; 2021 – Design och kod av Sofie Wallin. <a href="#">Tillbaka till toppen</a></p>
     </footer>
 </body>
 </html>

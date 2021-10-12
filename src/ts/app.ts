@@ -68,7 +68,7 @@ const showErrorMessage = (field: HTMLInputElement): void => {
                 errorMessage = `Fyll i ett startdatum innan ${field.max}.`;
             }
             startDateError.innerHTML = errorMessage; // Write error message
-            startDateError.className = 'error active'; // Show error
+            startDateError.className = 'error is-active'; // Show error
             break;
         /* End date error messages */
         case endDateInput:
@@ -81,7 +81,7 @@ const showErrorMessage = (field: HTMLInputElement): void => {
                 errorMessage = `Fyll i ett slutsdatum innan ${field.max}.`;
             }
             endDateError.innerHTML = errorMessage; // Write error message
-            endDateError.className = 'error active'; // Show error
+            endDateError.className = 'error is-active'; // Show error
             break;
         /* Code error messages */
         case codeInput:
@@ -94,7 +94,7 @@ const showErrorMessage = (field: HTMLInputElement): void => {
                 errorMessage = `Fyll i en kurskod med max ${field.maxLength} tecken, ex. DT057G.`;
             }
             codeError.innerHTML = errorMessage; // Write error message
-            codeError.className = 'error active'; // Show error
+            codeError.className = 'error is-active'; // Show error
             break;
         /* Title error messages */
         case titleInput:
@@ -107,7 +107,7 @@ const showErrorMessage = (field: HTMLInputElement): void => {
                 errorMessage = `Fyll i ett kursnamn med max ${field.maxLength} tecken, ex Webbutveckling I.`;
             }
             titleError.innerHTML = errorMessage; // Write error message
-            titleError.className = 'error active'; // Show error
+            titleError.className = 'error is-active'; // Show error
             break;
         /* Syllabus error messages */
         case syllabusInput:
@@ -120,7 +120,7 @@ const showErrorMessage = (field: HTMLInputElement): void => {
                 errorMessage = `Fyll i en kursplanslänk med ${field.maxLength} tecken, ex. https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=22782.`;
             }
             syllabusError.innerHTML = errorMessage; // Write error message
-            syllabusError.className = 'error active'; // Show error
+            syllabusError.className = 'error is-active'; // Show error
             break;
     }
 }
@@ -198,7 +198,7 @@ const addCourse = () => {
     /* Create course in web service from course object using CourseGateway class */
     courseGateway.create(course)
         .then(courses => {
-            successMessage.className = 'success active'; // Activate success message
+            successMessage.className = 'success is-active'; // Activate success message
             successMessage.innerText = 'Kursen har skapats.'; // Define success message
             tableBody.innerHTML = ''; // Empty courses
             printCourses(); // Print courses again
