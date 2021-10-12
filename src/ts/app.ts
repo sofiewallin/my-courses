@@ -67,6 +67,7 @@ const showErrorMessage = (field: HTMLInputElement): void => {
             } else if(field.validity.rangeOverflow) {
                 errorMessage = `Fyll i ett startdatum innan ${field.max}.`;
             }
+            startDateInput.className = 'invalid'; // Give field invalid class
             startDateError.innerHTML = errorMessage; // Write error message
             startDateError.className = 'error is-active'; // Show error
             break;
@@ -80,6 +81,7 @@ const showErrorMessage = (field: HTMLInputElement): void => {
             } else if(field.validity.rangeOverflow) {
                 errorMessage = `Fyll i ett slutsdatum innan ${field.max}.`;
             }
+            endDateInput.className = 'invalid'; // Give field invalid class
             endDateError.innerHTML = errorMessage; // Write error message
             endDateError.className = 'error is-active'; // Show error
             break;
@@ -93,6 +95,7 @@ const showErrorMessage = (field: HTMLInputElement): void => {
             } else if(field.validity.tooLong) {
                 errorMessage = `Fyll i en kurskod med max ${field.maxLength} tecken, ex. DT057G.`;
             }
+            codeInput.className = 'invalid'; // Give field invalid class
             codeError.innerHTML = errorMessage; // Write error message
             codeError.className = 'error is-active'; // Show error
             break;
@@ -106,6 +109,7 @@ const showErrorMessage = (field: HTMLInputElement): void => {
             } else if(field.validity.tooLong) {
                 errorMessage = `Fyll i ett kursnamn med max ${field.maxLength} tecken, ex Webbutveckling I.`;
             }
+            titleInput.className = 'invalid'; // Give field invalid class
             titleError.innerHTML = errorMessage; // Write error message
             titleError.className = 'error is-active'; // Show error
             break;
@@ -113,12 +117,13 @@ const showErrorMessage = (field: HTMLInputElement): void => {
         case syllabusInput:
             /* Check error type and set correct error message */
             if(field.validity.valueMissing) {
-                errorMessage = `Fyll i en kursplanslänk, ex. https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=22782.`;
+                errorMessage = `Fyll i en kursplanslänk. <a href="https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/" target="_blank" rel="noreferrer noopener">Sök kursplan här</a>.`;
             } else if(field.validity.typeMismatch) {
-                errorMessage = `Fyll i en giltig url. <a href="https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/" target="_blank" rel="noreferrer noopener">Sök kursplan här</a>.`;
+                errorMessage = `Fyll i en giltig kursplanslänk. Den måste börja med https://.`;
             } else if(field.validity.tooLong) {
-                errorMessage = `Fyll i en kursplanslänk med ${field.maxLength} tecken, ex. https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=22782.`;
+                errorMessage = `Fyll i en kursplanslänk med ${field.maxLength} tecken. <a href="https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/" target="_blank" rel="noreferrer noopener">Sök kursplan här</a>.`;
             }
+            syllabusInput.className = 'invalid'; // Give field invalid class
             syllabusError.innerHTML = errorMessage; // Write error message
             syllabusError.className = 'error is-active'; // Show error
             break;
@@ -128,9 +133,10 @@ const showErrorMessage = (field: HTMLInputElement): void => {
 /*------ Add event listeners to form fields for validation ------*/
 
 /* Start date field event listener */
-startDateInput.addEventListener('input', (e: Event) => {
+startDateInput.addEventListener('blur', (e: Event) => {
     /* Check if field is valid */
     if(startDateInput.validity.valid) {
+        startDateInput.className = 'valid'; // Give field valid class
         startDateError.innerHTML = ''; // Remove error message
         startDateError.className = 'error'; // Hide error
     } else {
@@ -139,9 +145,10 @@ startDateInput.addEventListener('input', (e: Event) => {
 });
 
 /* End date field event listener */
-endDateInput.addEventListener('input', (e: Event) => {
+endDateInput.addEventListener('blur', (e: Event) => {
     /* Check if field is valid */
     if(endDateInput.validity.valid) {
+        endDateInput.className = 'valid'; // Give field valid class
         endDateError.innerHTML = ''; // Remove error message
         endDateError.className = 'error'; // Hide error
     } else {
@@ -150,9 +157,10 @@ endDateInput.addEventListener('input', (e: Event) => {
 });
 
 /* Code field event listener */
-codeInput.addEventListener('input', (e: Event) => {
+codeInput.addEventListener('blur', (e: Event) => {
     /* Check if field is valid */
     if(codeInput.validity.valid) {
+        codeInput.className = 'valid'; // Give field valid class
         codeError.innerHTML = ''; // Remove error message
         codeError.className = 'error'; // Hide error
     } else {
@@ -161,9 +169,10 @@ codeInput.addEventListener('input', (e: Event) => {
 });
 
 /* Title field event listener */
-titleInput.addEventListener('input', (e: Event) => {
+titleInput.addEventListener('blur', (e: Event) => {
     /* Check if field is valid */
     if(titleInput.validity.valid) {
+        titleInput.className = 'valid'; // Give field valid class
         titleError.innerHTML = ''; // Remove error message
         titleError.className = 'error'; // Hide error
     } else {
@@ -172,9 +181,10 @@ titleInput.addEventListener('input', (e: Event) => {
 });
 
 /* Syllabus field event listener */
-syllabusInput.addEventListener('input', (e: Event) => {
+syllabusInput.addEventListener('blur', (e: Event) => {
     /* Check if field is valid */
     if(syllabusInput.validity.valid) {
+        syllabusInput.className = 'valid'; // Give field valid class
         syllabusError.innerHTML = ''; // Remove error message
         syllabusError.className = 'error'; // Hide error
     } else {

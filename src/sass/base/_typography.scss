@@ -27,6 +27,7 @@ a {
 
 a {
     color: $blue;
+    transition: all 0.4s ease-in;
 
     &:visited {
         color: $purple;

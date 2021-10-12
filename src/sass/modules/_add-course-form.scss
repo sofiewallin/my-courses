@@ -22,24 +22,23 @@ label {
 
 .submit-field {
     margin-top: $spacing-25;
+    margin-bottom: 0;
 }
 
 /*------ Fields ------*/
 
-input,
+input[type=text],
+input[type=date],
+input[type=url],
 select {
     @include border;
     background-color: $white;
     padding: $spacing-5;
     width: $full-width;
 
-    &:invalid {
+    &.invalid {
         border-color: $red;
-        background-color: lighten($red, 58%);
-    }
-
-    &:focus:invalid {
-        outline: none;
+        background-color: lighten($red, 56%);
     }
 }
 
@@ -49,7 +48,9 @@ select {
 .success {
     color: $white;
     font-weight: $font-regular;
+    max-height: 0;
     padding: 0;
+    transition: all 0.1s ease-in;
 }
 
 .error {
@@ -74,6 +75,7 @@ select {
 
 .is-active {
     padding: $spacing-5;
+    max-height: 100px;
 
     @include breakpoint(tablet) {
         padding: $spacing-10;
