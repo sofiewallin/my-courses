@@ -133,7 +133,7 @@ const showErrorMessage = (field: HTMLInputElement): void => {
 /*------ Add event listeners to form fields for validation ------*/
 
 /* Start date field event listener */
-startDateInput.addEventListener('blur', (e: Event) => {
+startDateInput.addEventListener('input', (e: Event) => {
     /* Check if field is valid */
     if(startDateInput.validity.valid) {
         startDateInput.className = 'valid'; // Give field valid class
@@ -145,7 +145,7 @@ startDateInput.addEventListener('blur', (e: Event) => {
 });
 
 /* End date field event listener */
-endDateInput.addEventListener('blur', (e: Event) => {
+endDateInput.addEventListener('input', (e: Event) => {
     /* Check if field is valid */
     if(endDateInput.validity.valid) {
         endDateInput.className = 'valid'; // Give field valid class
@@ -157,7 +157,7 @@ endDateInput.addEventListener('blur', (e: Event) => {
 });
 
 /* Code field event listener */
-codeInput.addEventListener('blur', (e: Event) => {
+codeInput.addEventListener('input', (e: Event) => {
     /* Check if field is valid */
     if(codeInput.validity.valid) {
         codeInput.className = 'valid'; // Give field valid class
@@ -169,7 +169,7 @@ codeInput.addEventListener('blur', (e: Event) => {
 });
 
 /* Title field event listener */
-titleInput.addEventListener('blur', (e: Event) => {
+titleInput.addEventListener('input', (e: Event) => {
     /* Check if field is valid */
     if(titleInput.validity.valid) {
         titleInput.className = 'valid'; // Give field valid class
@@ -181,7 +181,7 @@ titleInput.addEventListener('blur', (e: Event) => {
 });
 
 /* Syllabus field event listener */
-syllabusInput.addEventListener('blur', (e: Event) => {
+syllabusInput.addEventListener('input', (e: Event) => {
     /* Check if field is valid */
     if(syllabusInput.validity.valid) {
         syllabusInput.className = 'valid'; // Give field valid class
