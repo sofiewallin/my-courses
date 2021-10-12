@@ -1,0 +1,156 @@
+/*------------------------------------*\
+    LAYOUT & BLOCK STYLE
+\*------------------------------------*/
+
+/*------ General ------*/
+
+
+section,
+#main-footer {
+    margin-top: $spacing-35;
+
+    .box:first-child {
+        margin-top: $spacing-40;
+        margin-bottom: $spacing-40;
+    }
+
+    @include breakpoint(tablet) {
+        margin-top: $spacing-45;
+
+        .box:first-child {
+            margin-top: $spacing-50;
+            margin-bottom: $spacing-50;
+        }
+    }
+
+    @include breakpoint(desktop) {
+        margin-top: $spacing-75;
+
+        .box:first-child {
+            margin-top: $spacing-85;
+            margin-bottom: $spacing-85;
+        }
+    }
+}
+
+/*------ Main content ------*/
+
+/* Rows */
+.row {
+    @include block;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: calc($width-440 + ($spacing-20*2));
+    padding-right: $spacing-20;
+    padding-left: $spacing-20;
+
+    &--wide {
+        @extend .row;
+        max-width: calc($width-wide + ($spacing-20*2));
+    }
+
+    &--full {
+        @extend .row;
+        padding-right: 0;
+        padding-left: 0;
+        max-width: $full-width;
+    }
+
+    @include breakpoint(tablet) {   
+        max-width: calc($width-540 + ($spacing-20*2));
+
+        &--wide {
+            max-width: calc($width-wide + ($spacing-40*2));
+            padding-right: $spacing-40;
+            padding-left: $spacing-40;
+        }
+    }
+}
+
+/* Columns */
+.columns-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.0rem;
+
+    @include breakpoint(tablet) {
+        column-gap: 2.0rem;
+    }
+}
+
+/* Content blocks */
+#main-content {
+    h1,
+    h2,
+    p,
+    ul {
+        margin-bottom: 0.5em;
+    }
+
+    h2 {
+        &:not(:first-child) {
+            margin-top: $spacing-40;
+        }
+    }
+
+    h3 {
+        margin-top: 1.25em;
+        margin-bottom: 0.7em;
+
+        @include breakpoint(tablet) {
+            margin-top: 1.4em;
+        }
+
+        @include breakpoint(desktop) {
+            margin-top: 1.6em;
+        }
+    }
+
+    li {
+        padding-left: $spacing-20;
+        margin-bottom: 0.5em;
+
+        @include breakpoint(tablet) {
+            padding-left: $spacing-25;
+        }
+    }
+
+    .button-container {
+        margin-top: $spacing-25;
+        margin-bottom: $spacing-25;
+    
+        &:last-child {
+            margin-bottom: $spacing-40;
+        }
+
+        @include breakpoint(tablet) {
+            margin-top: $spacing-40;
+            margin-bottom: $spacing-40;
+    
+            &:last-child {
+                margin-bottom: $spacing-50;
+            }
+        }
+
+        @include breakpoint(tablet) {
+    
+            &:last-child {
+                margin-bottom: $spacing-85;
+            }
+        }
+    }
+    
+    .button {
+        margin-right: 1.5rem;
+    }
+}
+
+/*------ Main footer ------*/
+
+#main-footer {
+    padding-bottom: $spacing-20;
+
+    @include breakpoint(tablet) {
+        padding-bottom: $spacing-35;
+    }
+}

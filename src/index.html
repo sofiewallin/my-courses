@@ -4,12 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mina kurser</title>
+    <title>Kurslistan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,400;0,600;1,200;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Hej svej</h1>
+    <header id="main-header">
+        <h1 class="heading row">Kurslistan</h1>
+        <p class="preamble row">En webbapplikation byggd med HTML, TypeScript och Sass som visar och hanterar kurserna i min utbildning med hjälp av en <a href="https://studenter.miun.se/~sowa2002/dt173g/kursmoment5-rest/">REST webbtjänst</a> som jag också utvecklat.</p> 
+    </header>
+    <main id="main-content">
+        <section id="kurslista">
+            <h3 class="heading row">Mina kurser</h3>
+            <div id="result">
+
+            </div>
+            <table id="courses" class="row--wide">
+                <thead>
+                    <tr>
+                        <th>Kurskod</th>
+                        <th>Kursnamn</th>
+                        <th>Progression</th>
+                        <th>Kursplan</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+        <section id="lagg-till-kurs">
+            <h3 class="heading row">Lägg till kurs</h3>
+            <form action="./" id="add-course" class="row" novalidate>
+                <p>
+                    <label for="start-date">Startdatum <abbr title="obligatorisk" class="required">*</abbr></label>
+                    <input type="date" name="start-date" id="start-date" min="2020-08-31" max="2022-03-21" required value="2021-11-01">
+                    <span class="error" aria-live="polite"></span>
+                </p>
+                <p>
+                    <label for="end-date">Slutdatum <abbr title="obligatorisk" class="required">*</abbr></label>
+                    <input type="date" name="end-date" id="end-date" min="2020-11-01" max="2022-06-05" required value="2021-01-16">
+                    <span class="error" aria-live="polite"></span>
+                </p>
+                <p>
+                    <label for="code">Kurskod <abbr title="obligatorisk" class="required">*</abbr></label>
+                    <input type="text" name="code" id="code" minlength="6" maxlength="7" placeholder="ex. DT057G" required value="DT162G">
+                    <span class="error" aria-live="polite"></span>
+                </p>
+                <p>
+                    <label for="title">Kursnamn <abbr title="obligatorisk" class="required">*</abbr></label>
+                    <input type="text" name="title" id="title" minlength="2" maxlength="255" placeholder="ex. Webbutveckling I"required value="Javascriptbaserad webbutveckling">
+                    <span class="error" aria-live="polite"></span>
+                </p>
+                <p>
+                    <label for="progression">Progression <abbr title="obligatorisk" class="required">*</abbr></label>
+                    <select name="progression" id="progression" required>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="syllabus">Länk till kursplan <abbr title="obligatorisk" class="required">*</abbr></label>
+                    <input type="url" name="syllabus" id="syllabus" maxlength="255" placeholder="https://www.miun.se/..." required value="https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=24366">
+                    <span class="error" aria-live="polite"></span>
+                </p>
+                <p>
+                    <input type="submit" value="Lägg till kurs" id="submit">
+                </p>
+                <p class="success" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+    <footer id="main-footer">
+        <footer id="main-footer">
+            <p class="row">&copy; 2021 – Design och kod av Sofie Wallin. <a href="#">Tillbaka till toppen</a></p>
+        </footer>
+    </footer>
 </body>
 </html>

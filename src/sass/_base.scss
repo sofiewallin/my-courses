@@ -1,0 +1,179 @@
+/*------------------------------------*\
+    VARIABLES
+\*------------------------------------*/
+
+/*------ Layout ------*/
+
+/* Widths */
+$full-width: 100%;
+$width-440: 44.0rem;
+$width-540: 54.0rem;
+$width-wide: 90.0rem;
+
+/* Spacing */
+$spacing-20: 2.0rem;
+$spacing-25: 2.5rem;
+$spacing-35: 3.5rem;
+$spacing-40: 4.0rem;
+$spacing-45: 4.5rem;
+$spacing-50: 5.0rem;
+$spacing-60: 6.0rem;
+$spacing-75: 7.5rem;
+$spacing-85: 8.5rem;
+$spacing-90: 9.0rem;
+
+/*------ Colors ------*/
+$yellow: #e9b92c;
+$light-yellow: lighten($yellow, 40%);
+$blue: #2a31b7;
+$dark-grey: #282828;
+$white: #fff;
+$purple: #653083;
+
+/*------ Typography ------*/
+
+/* Font Family */
+$main-font: ('Jost', sans-serif);
+$code-font: monospace;
+
+/* Font weight */
+$font-extralight: 200;
+$font-regular: 400;
+$font-semibold: 600;
+
+/* Font sizes */
+$font-size-16: 1.6rem;
+$font-size-18: 1.8rem;
+$font-size-22: 2.2rem;
+$font-size-24: 2.4rem;
+$font-size-26: 2.6rem;
+$font-size-32: 3.2rem;
+$font-size-45: 4.5rem;
+$font-size-60: 6.0rem;
+
+/*------------------------------------*\
+    MIXINS
+\*------------------------------------*/
+
+/* Breakpoints */
+@mixin breakpoint($point) {
+    @if $point == mobile-landscape {
+        @media only screen and (min-width: 667px) {
+            @content;
+        }
+    } 
+    @else if $point == tablet {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    } 
+    @else if $point == desktop {
+        @media only screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+}
+
+/* Blocks */
+@mixin block {
+    display: block;
+    width: $full-width;
+}
+
+@mixin inline-block {
+    display: inline-block;
+    width: auto;
+}
+
+@mixin pseudo-block {
+    display: block;
+    position: absolute;
+}
+
+/* Lists */
+@mixin no-list-style {
+    list-style: none;
+}
+
+/* Centered content */
+
+@mixin align-center {
+    text-align: center;
+}
+
+/*------------------------------------*\
+    BASE STYLE & RESETS
+\*------------------------------------*/
+
+html, 
+*, 
+*::after, 
+*::before {   
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+html, 
+body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $light-yellow;
+    color: $dark-grey;
+}
+
+figure,
+img {
+    @include block;
+    height: auto;
+    max-width: $full-width;
+}
+
+/*------------------------------------*\
+    HELPER CLASSES
+\*------------------------------------*/
+
+/* Hidden elements */
+.hidden-visually:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+/* Clearfix for containers of floating elements */
+.clear::before,
+.clear::after {
+    content: '';
+    display: table;
+}
+
+.clear::after {
+    clear: both;
+}
+
+/* Background colors */
+
+.white-bg {
+    background-color: $white;
+}
+
+input:invalid {
+    border: 1px solid red;
+}
+
