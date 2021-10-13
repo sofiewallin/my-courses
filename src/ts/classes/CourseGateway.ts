@@ -3,6 +3,7 @@
  * — by Sofie Wallin, student at MIUN 2021
  */
 import { Course } from '../interfaces/Course';
+import { Message } from '../interfaces/Message';
 
 export class CourseGateway {
     private api = 'https://studenter.miun.se/~sowa2002/dt173g/kursmoment5-rest/courses.php';
@@ -23,19 +24,19 @@ export class CourseGateway {
     }
 
     /*------ Create course from course object ------*/
-    async create(course: Course): Promise<Course[]> {
+    async create(course: Course): Promise<Message> {
         /* Create course in web service  */
         const response = await fetch(this.api, {
             method: 'POST',
             body: JSON.stringify(course)
         })
         /* Get response */
-        const courses = await response.json();
+        const data = await response.json();
         /* Check if response is not ok */
         if (!response.ok) {
             throw new Error(response.statusText) // Throw error
         }
         /* Return response promise */
-        return courses;
+        return data;
     }
 }

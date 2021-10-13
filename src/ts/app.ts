@@ -207,10 +207,10 @@ const addCourse = () => {
     
     /* Create course in web service from course object using CourseGateway class */
     courseGateway.create(course)
-        .then(courses => {
+        .then(data => {
             successMessage.className = 'success is-active'; // Activate success message
-            successMessage.innerText = 'Kursen har skapats.'; // Define success message
-            tableBody.innerHTML = ''; // Empty courses
+            successMessage.innerText = data.message; // Write success message
+            tableBody.innerHTML = ''; // Empty courses*/
             
             /* Empty all values */
             startDateInput.value = '';
